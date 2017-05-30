@@ -47,7 +47,7 @@ public class HighArray {
         }
     }
 
-    public void removeMax() { // get&delete max key from an array
+    public void removeMax() { // find&delete max key from an array
         // Linear Search
         long maxKey = a[0];
 
