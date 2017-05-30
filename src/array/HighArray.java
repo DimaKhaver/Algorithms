@@ -4,7 +4,7 @@ package array;
  * Created by dmitriy on 30.05.17.
  */
 
-/*  Project 2.1 */
+/*  Project 2.2 */
 
 public class HighArray {
 
@@ -47,16 +47,20 @@ public class HighArray {
         }
     }
 
-    public long getMax() { // get max key from an array
+    public void removeMax() { // get&delete max key from an array
         // Linear Search
         long maxKey = a[0];
 
-        for (int i = 1; i < elems; ++i) {
-            if (maxKey < a[i])
+        for (int i = 1; i < elems; ++i)
+            if (maxKey < a[i]) {
                 maxKey = a[i];
-        }
+                System.out.println("Max value = " + maxKey);
 
-        return maxKey;
+                for(int j = i; j < elems; ++j)
+                    a[j] = a[j+1];
+
+                elems--;
+            }
     }
 
     public void display() {

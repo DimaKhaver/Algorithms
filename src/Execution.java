@@ -9,23 +9,23 @@ public class Execution {
 
         HighArray highArray = new HighArray(20);
 
-        highArray.insert(1500);
-        highArray.insert(30033);
-        highArray.insert(50000);
-        highArray.insert(80000);
-        highArray.insert(323232);
-        highArray.insert(323212);
-        highArray.insert(323212);
-        highArray.insert(323212);
-        highArray.insert(433215);
-        highArray.insert(9999999);
-        highArray.insert(323212);
-
+        highArray.insert(1500L);
+        highArray.insert(30033L);
+        highArray.insert(50000L);
+        highArray.insert(80000L);
+        highArray.insert(323232L);
+        highArray.insert(323212L);
+        highArray.insert(323212L);
+        highArray.insert(323212L);
+        highArray.insert(4332151323L);
+        highArray.insert(9999999L);
+        highArray.insert(323212L);
 
         highArray.display();
 
-        long maxKey = highArray.getMax();
-        System.out.println("MaxKey = " + maxKey);
+        highArray.removeMax();
+
+        highArray.display();
 
     }
 }
