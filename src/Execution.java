@@ -1,4 +1,4 @@
-import array.HighArray;
+import array.OrdArray;
 
 /**
  * Created by dmitriy on 30.05.17.
@@ -7,25 +7,19 @@ public class Execution {
 
     public static void main(String[] args) {
 
-        HighArray highArray = new HighArray(20);
+        OrdArray ordArray = new OrdArray(8);
 
-        highArray.insert(1500L);
-        highArray.insert(30033L);
-        highArray.insert(50000L);
-        highArray.insert(80000L);
-        highArray.insert(323232L);
-        highArray.insert(323212L);
-        highArray.insert(323212L);
-        highArray.insert(323212L);
-        highArray.insert(4332151323L);
-        highArray.insert(9999999L);
-        highArray.insert(323212L);
+        ordArray.insert(89L);
+        ordArray.insert(1L);
+        ordArray.insert(6L);
+        ordArray.insert(12L);
+        ordArray.insert(3L);
+        ordArray.insert(5L);
+        ordArray.insert(4L);
+        ordArray.insert(800L);
+        ordArray.insert(7L);
 
-        highArray.display();
 
-        highArray.removeMax();
-
-        highArray.display();
-
+        ordArray.display();
     }
 }

@@ -54,7 +54,7 @@ public class HighArray {
         for (int i = 1; i < elems; ++i)
             if (maxKey < a[i]) {
                 maxKey = a[i];
-                System.out.println("Max value = " + maxKey);
+                System.out.println("max key = " + maxKey);
 
                 for(int j = i; j < elems; ++j)
                     a[j] = a[j+1];
