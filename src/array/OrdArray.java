@@ -6,6 +6,8 @@ package array;
 public class OrdArray {
     private long [] a;
     private int elems;
+    private int currentIndex;
+
 
     public OrdArray(int max) {
         a = new long[max];
@@ -18,67 +20,53 @@ public class OrdArray {
 
     public int find(long searchKey) {
         int lowerBound = 0;
-        int upperBound = elems -1 ;
-        int currentIndex;
+        int upperBound = elems - 1;
+
+        System.out.println("\nupperBound = " + upperBound + " elems = " + elems);
 
         // Binary search
         while(true) {
 
             currentIndex = (lowerBound + upperBound) / 2;
-            if (a[currentIndex] == searchKey)
+
+            if (elems == 0) {
+                return currentIndex = 0;
+            }
+
+            if (lowerBound == currentIndex) {
+                if (a[currentIndex] > searchKey) {
+                    return currentIndex;
+                }
+            }
+
+            if (a[currentIndex] < searchKey) {
+                lowerBound = currentIndex + 1;
+                if (lowerBound > upperBound) {
+                    return currentIndex += 1;
+                }
+            } else if (lowerBound > upperBound) {
                 return currentIndex;
-
-            else if (lowerBound > upperBound)
-                return elems;
-
-            else {
-                if (a[currentIndex] < searchKey)
-                    lowerBound = currentIndex + 1; // in upper half
-                else
-                    upperBound = currentIndex - 1; // in lower half
+            } else {
+                upperBound = currentIndex - 1;
             }
         }
     }
 
     public void insert(long value) { // Binary search
 
-        int lowerBound = 0;
-        int upperBound = elems-1;
-        int currentIndex;
+        find(value);
 
-        while (true) {
-
-            currentIndex = (lowerBound + upperBound) / 2;
-
-            if (a[currentIndex] == value || a[currentIndex] > value) {
-
-                for (int i = elems; i > currentIndex; i--) {
-                        a[i] = a[i - 1];
-                }
-                a[currentIndex] = value;
-                elems++;
-
-                break;
-            }
-
-            if (elems == 0) {
-                a[lowerBound] = value;
-                elems++;
-            }
-
-            if (lowerBound > upperBound) {
-                a[currentIndex] = value;
-                break;
-            }
-
-            else {
-                if (a[currentIndex] < value)
-                    lowerBound = currentIndex + 1;
-                else
-                    upperBound = currentIndex - 1;
-            }
+        for(int k = elems; k > currentIndex; k--) {
+            a[k] = a[k - 1];
         }
+
+        a[currentIndex] = value;
+
+        System.out.println("\nvalue = " + value + " currentIndex = " + currentIndex + "\n");
+
+        elems++;
     }
+
 
     public boolean delete(long value) {
         int j = find(value);

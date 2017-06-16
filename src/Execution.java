@@ -7,18 +7,16 @@ public class Execution {
 
     public static void main(String[] args) {
 
-        OrdArray ordArray = new OrdArray(8);
+        OrdArray ordArray = new OrdArray(10);
 
-        ordArray.insert(89L);
-        ordArray.insert(1L);
-        ordArray.insert(6L);
-        ordArray.insert(12L);
-        ordArray.insert(3L);
-        ordArray.insert(5L);
+        ordArray.insert(77L);
+        ordArray.insert(99L);
+        ordArray.insert(44L);
         ordArray.insert(4L);
-        ordArray.insert(800L);
-        ordArray.insert(7L);
-
+      //ordArray.insert(23L);
+      //ordArray.insert(12L);
+      //ordArray.insert(1L);
+      //ordArray.insert(100L);
 
         ordArray.display();
     }
