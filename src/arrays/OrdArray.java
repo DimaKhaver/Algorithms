@@ -1,4 +1,4 @@
-package array;
+package arrays;
 
 /**
  * Created by dmitriy on 31.05.17.
@@ -21,8 +21,6 @@ public class OrdArray {
     public int find(long searchKey) {
         int lowerBound = 0;
         int upperBound = elems - 1;
-
-        System.out.println("\nupperBound = " + upperBound + " elems = " + elems);
 
         // Binary search
         while(true) {
@@ -52,12 +50,12 @@ public class OrdArray {
         }
     }
 
-    public void merge(long [] b, long [] c) {
+    public void merge(long [] b, long [] c) { // merges two different ordered arrays -> one ordered array
 
         int newArrayLength = b.length + c.length;
       //int maxLength = b.length > c.length ? b.length : c.length;
 
-        for (int i = 0, j = 0; i < newArrayLength; ++i, ++j) { // i - new array; j - b and c
+        for (int i = 0, j = 0; i < newArrayLength; ++i, ++j) { // i - new arrays; j - b and c
 
             if (j >= b.length) {
                 if (j>= c.length)
@@ -88,6 +86,22 @@ public class OrdArray {
        }
     }
 
+    public void noDups() { // prevents duplicates in the array
+
+        for (int i = 0; i < this.size(); ++i) {
+
+            for (int j = i+1; j < this.size(); ++j) {
+
+                System.out.println("i = " + i);
+                System.out.println("j = " + j + "\n");
+
+                if (a[i] == a[j]) {
+                    a[j] = 0;
+                }
+            }
+        }
+    }
+
     public void insert(long value) { // Binary search
 
         find(value);
@@ -97,12 +111,8 @@ public class OrdArray {
         }
 
         a[currentIndex] = value;
-
-        System.out.println("\nvalue = " + value + " currentIndex = " + currentIndex + "\n");
-
         elems++;
     }
-
 
     public boolean delete(long value) {
         int j = find(value);
@@ -111,7 +121,7 @@ public class OrdArray {
             return false;
 
         else {
-            for (int k = j; k < elems; ++k)
+            for (int k = j; k < elems; k++)
                 a[k] = a[k + 1];
 
             elems--;
@@ -121,7 +131,7 @@ public class OrdArray {
 
     public void display() {
 
-        System.out.print("Display!");
+        System.out.print("Display!\n");
 
         for (int j = 0; j < a.length; ++j)
             System.out.println(a[j] + "");

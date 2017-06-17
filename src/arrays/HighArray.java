@@ -1,4 +1,4 @@
-package array;
+package arrays;
 
 /**
  * Created by dmitriy on 30.05.17.
@@ -47,7 +47,7 @@ public class HighArray {
         }
     }
 
-    public void removeMax() { // find&delete max key from an array
+    public void removeMax() { // find&delete max key from an arrays
         // Linear Search
         long maxKey = a[0];
 
