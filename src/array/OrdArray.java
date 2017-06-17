@@ -52,6 +52,42 @@ public class OrdArray {
         }
     }
 
+    public void merge(long [] b, long [] c) {
+
+        int newArrayLength = b.length + c.length;
+      //int maxLength = b.length > c.length ? b.length : c.length;
+
+        for (int i = 0, j = 0; i < newArrayLength; ++i, ++j) { // i - new array; j - b and c
+
+            if (j >= b.length) {
+                if (j>= c.length)
+                    break;
+                else
+                    a[i] = c[j];
+            }
+
+            if (j >= c.length) {
+                if (j>= b.length)
+                    break;
+                else
+                    a[i] = b[j];
+            }
+
+            else if (b[j] == c[j]) {
+                a[i] = b[j];
+                a[++i] = c[j];
+            }
+
+            else if (b[j] > c[j]) {
+                a[i] = c[j];
+                a[++i] = b[j];
+            } else if (c[j] > b[j]) {
+                a[i] = c[j];
+                a[++i] = b[j];
+            }
+       }
+    }
+
     public void insert(long value) { // Binary search
 
         find(value);
@@ -84,7 +120,10 @@ public class OrdArray {
     }
 
     public void display() {
-        for (int j = 0; j < elems; ++j)
+
+        System.out.print("Display!");
+
+        for (int j = 0; j < a.length; ++j)
             System.out.println(a[j] + "");
     }
 }

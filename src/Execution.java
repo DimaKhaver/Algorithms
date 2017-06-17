@@ -9,14 +9,10 @@ public class Execution {
 
         OrdArray ordArray = new OrdArray(10);
 
-        ordArray.insert(77L);
-        ordArray.insert(99L);
-        ordArray.insert(44L);
-        ordArray.insert(4L);
-      //ordArray.insert(23L);
-      //ordArray.insert(12L);
-      //ordArray.insert(1L);
-      //ordArray.insert(100L);
+        long [] b = { 2, 4, 6, 8, 10 };
+        long [] c = { 3, 5, 8 };
+
+        ordArray.merge(b, c);
 
         ordArray.display();
     }
