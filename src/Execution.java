@@ -1,4 +1,4 @@
-import arrays.OrdArray;
+import data_structure_and_algorithms.arrays.OrdArray;
 
 /**
  * Created by dmitriy on 30.05.17.

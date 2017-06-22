@@ -1,4 +1,4 @@
-package arrays;
+package data_structure_and_algorithms.arrays;
 
 /**
  * Created by dmitriy on 31.05.17.
@@ -50,12 +50,12 @@ public class OrdArray {
         }
     }
 
-    public void merge(long [] b, long [] c) { // merges two different ordered arrays -> one ordered array
+    public void merge(long [] b, long [] c) { // merges two different ordered data_structure_and_algorithms.arrays -> one ordered array
 
         int newArrayLength = b.length + c.length;
       //int maxLength = b.length > c.length ? b.length : c.length;
 
-        for (int i = 0, j = 0; i < newArrayLength; ++i, ++j) { // i - new arrays; j - b and c
+        for (int i = 0, j = 0; i < newArrayLength; ++i, ++j) { // i - new data_structure_and_algorithms.arrays; j - b and c
 
             if (j >= b.length) {
                 if (j>= c.length)
