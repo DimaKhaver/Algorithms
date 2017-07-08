@@ -1,4 +1,5 @@
-import data_structure_and_algorithms.arrays.OrdArray;
+import data_structures_and_algorithms.simple_sorting.ArrayInsertionSort;
+import data_structures_and_algorithms.simple_sorting.ArraySelectionSort;
 
 /**
  * Created by dmitriy on 30.05.17.
@@ -7,29 +8,29 @@ public class Execution {
 
     public static void main(String[] args) {
 
-        OrdArray ordArray = new OrdArray(10);
+        int maxSize = 100;
 
-      //long [] b = { 2, 4, 6, 8, 10 };
-      //long [] c = { 3, 5, 8 };
+        ArrayInsertionSort arr;
 
-      //ordArray.merge(b, c);
+        arr = new ArrayInsertionSort(maxSize);
 
+        arr.insert(1);
+        arr.insert(3);
+        arr.insert(2);
+        arr.insert(4);
+        arr.insert(5);
+        arr.insert(6);
+        arr.insert(7);
+        arr.insert(8);
+        arr.insert(11);
+        arr.insert(100);
+        arr.insert(130);
+        arr.insert(103);
+        arr.insert(122);
+        arr.insert(9);
 
-        ordArray.insert(1L);
-        ordArray.insert(4L);
-        ordArray.insert(2L);
-        ordArray.insert(1L);
-        ordArray.insert(5L);
-        ordArray.insert(8L);
-        ordArray.insert(2L);
-        ordArray.insert(1L);
-        ordArray.insert(9L);
-        ordArray.insert(9L);
-
-      //ordArray.display();
-
-      //ordArray.noDups();
-
-        ordArray.display();
+        arr.display();
+        arr.insertSort();
+        arr.display();
     }
 }

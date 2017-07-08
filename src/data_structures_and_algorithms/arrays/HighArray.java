@@ -1,4 +1,4 @@
-package data_structure_and_algorithms.arrays;
+package data_structures_and_algorithms.arrays;
 
 /**
  * Created by dmitriy on 30.05.17.
@@ -47,7 +47,7 @@ public class HighArray {
         }
     }
 
-    public void removeMax() { // find&delete max key from an data_structure_and_algorithms.arrays
+    public void removeMax() { // find&delete max key
         // Linear Search
         long maxKey = a[0];
 
