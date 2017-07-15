@@ -1,4 +1,4 @@
-package data_structures_and_algorithms.arrays;
+package data_structures_and_algorithms_book.arrays;
 
 /**
  * Created by dmitriy on 31.05.17.

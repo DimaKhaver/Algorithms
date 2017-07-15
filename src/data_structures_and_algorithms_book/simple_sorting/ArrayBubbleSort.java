@@ -1,4 +1,4 @@
-package data_structures_and_algorithms.simple_sorting;
+package data_structures_and_algorithms_book.simple_sorting;
 
 /**
  * Created by dmitriy on 23.06.17.
@@ -24,11 +24,12 @@ public class ArrayBubbleSort {
         System.out.println("");
     }
 
-    public void bubbleSort() {
+    // Lower values accumulate on the right
+    public void bubbleSort() { // O(N^2)
         int out, in;
 
-        for (out = elems - 1; out > 1; out--)
-            for (in = 0; in < out; in++)
+        for (out = elems - 1; out > 1; out--) // <--
+            for (in = 0; in < out; in++) // -->
                 if (a[in] > a[in + 1])
                     swap(in, in + 1);
     }

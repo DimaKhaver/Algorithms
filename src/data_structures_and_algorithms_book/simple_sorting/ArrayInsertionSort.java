@@ -1,4 +1,4 @@
-package data_structures_and_algorithms.simple_sorting;
+package data_structures_and_algorithms_book.simple_sorting;
 
 /**
  * Created by dmitriy on 08.07.17.
@@ -24,7 +24,7 @@ public class ArrayInsertionSort {
         System.out.println("");
     }
 
-    public void insertSort() {
+    public void insertionSort() { // O(N^2)
         int in, out;
 
         for (out = 1; out < elems; out++) {
