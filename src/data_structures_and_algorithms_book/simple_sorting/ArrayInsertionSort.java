@@ -7,6 +7,8 @@ public class ArrayInsertionSort {
 
     private long[] a;
     private int elems;
+    private int lastUnrepeatedIndex = 0;
+    private int repeatedDigitsCount = 0;
 
     public ArrayInsertionSort(int max) {
         a = new long[max];
@@ -22,6 +24,41 @@ public class ArrayInsertionSort {
         for (int j = 0; j < elems; j++)
             System.out.print(a[j] + " ");
         System.out.println("");
+    }
+
+    public void noDups() { // Deleting all duplicates
+        // (no item is moved more than once - no matter how many duplicates there are)
+
+        for (int i = 0; i < elems; ++i) {
+
+            if (!isRepeated(i)) {
+                if (lastUnrepeatedIndex < elems - 1) {
+
+                    if (i > lastUnrepeatedIndex) {
+                        a[lastUnrepeatedIndex + 1] = a[i];
+                        lastUnrepeatedIndex += 1;
+                    }
+                }
+            }
+        }
+
+        elems -= repeatedDigitsCount;
+    }
+
+    private boolean isRepeated(int index) {
+
+        boolean isRepeated = false;
+
+        for (int j = 0; j < index; ++j) {
+            if (a[j] == a[index]) {
+                isRepeated = true;
+                repeatedDigitsCount++;
+
+                break;
+            }
+        }
+
+        return isRepeated;
     }
 
     public void insertionSort() { // O(N^2)

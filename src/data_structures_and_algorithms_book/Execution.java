@@ -1,6 +1,7 @@
+
 package data_structures_and_algorithms_book;
 
-import data_structures_and_algorithms_book.simple_sorting.ArrayInOb;
+import data_structures_and_algorithms_book.simple_sorting.ArrayInsertionSort;
 
 /**
  * Created by dmitriy on 30.05.17.
@@ -9,28 +10,29 @@ public class Execution {
 
     public static void main(String[] args) {
 
-        int maxSize = 100;
+        ArrayInsertionSort arrayInsertionSort = new ArrayInsertionSort(20);
 
-        ArrayInOb arrayInOb = new ArrayInOb(maxSize);
+        arrayInsertionSort.insert(2L);
+        arrayInsertionSort.insert(2L);
+        arrayInsertionSort.insert(2L);
+        arrayInsertionSort.insert(3L);
+        arrayInsertionSort.insert(3L);
+        arrayInsertionSort.insert(3L);
+        arrayInsertionSort.insert(3L);
+        arrayInsertionSort.insert(4L);
+        arrayInsertionSort.insert(4L);
+        arrayInsertionSort.insert(4L);
+        arrayInsertionSort.insert(5L);
+        arrayInsertionSort.insert(7L);
+        arrayInsertionSort.insert(8L);
+        arrayInsertionSort.insert(8L);
+        arrayInsertionSort.insert(9L);
+        arrayInsertionSort.insert(9L);
 
-        arrayInOb.insert("Evans", "Patty", 24);
-        arrayInOb.insert("Smith", "Doc", 59);
-        arrayInOb.insert("Smith", "Lof", 30);
-        arrayInOb.insert("Yee", "Paul", 44);
-        arrayInOb.insert("Hashimoto", "Sato", 20);
-        arrayInOb.insert("Stimson", "Henry", 31);
-        arrayInOb.insert("Velasquez", "Jose", 33);
-        arrayInOb.insert("Vang", "Minh", 42);
+        arrayInsertionSort.display();
 
-        System.out.print("\nBefore sorting:\n");
+        arrayInsertionSort.noDups();
 
-        arrayInOb.display();
-
-        arrayInOb.insertionSort();
-
-        System.out.print("\nAfter sorting:\n");
-
-        arrayInOb.display();
-
+        arrayInsertionSort.display();
     }
 }
