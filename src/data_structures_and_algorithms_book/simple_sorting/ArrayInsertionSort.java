@@ -30,10 +30,8 @@ public class ArrayInsertionSort {
         // (no item is moved more than once - no matter how many duplicates there are)
 
         for (int i = 0; i < elems; ++i) {
-
             if (!isRepeated(i)) {
                 if (lastUnrepeatedIndex < elems - 1) {
-
                     if (i > lastUnrepeatedIndex) {
                         a[lastUnrepeatedIndex + 1] = a[i];
                         lastUnrepeatedIndex += 1;
@@ -46,7 +44,6 @@ public class ArrayInsertionSort {
     }
 
     private boolean isRepeated(int index) {
-
         boolean isRepeated = false;
 
         for (int j = 0; j < index; ++j) {
