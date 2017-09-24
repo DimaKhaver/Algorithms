@@ -1,7 +1,11 @@
 
 package data_structures_and_algorithms_book;
 
-import data_structures_and_algorithms_book.simple_sorting.ArrayInsertionSort;
+import data_structures_and_algorithms_book.stacks_and_queues.Reverser;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * Created by dmitriy on 30.05.17.
@@ -10,29 +14,32 @@ public class Execution {
 
     public static void main(String[] args) {
 
-        ArrayInsertionSort arrayInsertionSort = new ArrayInsertionSort(20);
+        String input = null, output;
 
-        arrayInsertionSort.insert(2L);
-        arrayInsertionSort.insert(2L);
-        arrayInsertionSort.insert(2L);
-        arrayInsertionSort.insert(3L);
-        arrayInsertionSort.insert(3L);
-        arrayInsertionSort.insert(3L);
-        arrayInsertionSort.insert(3L);
-        arrayInsertionSort.insert(4L);
-        arrayInsertionSort.insert(4L);
-        arrayInsertionSort.insert(4L);
-        arrayInsertionSort.insert(5L);
-        arrayInsertionSort.insert(7L);
-        arrayInsertionSort.insert(8L);
-        arrayInsertionSort.insert(8L);
-        arrayInsertionSort.insert(9L);
-        arrayInsertionSort.insert(9L);
+        while (true) {
 
-        arrayInsertionSort.display();
+            System.out.print("Enter a string: ");
+            System.out.flush();
 
-        arrayInsertionSort.noDups();
+            try {
+                input = getString();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if (input != null)
+                if (input.equals(""))
+                    break;
 
-        arrayInsertionSort.display();
+            Reverser reverser = new Reverser(input);
+            output = reverser.doRev();
+            System.out.print("Reversed: " + output);
+        }
+    }
+    
+    private static String getString() throws IOException {
+        InputStreamReader isr = new InputStreamReader(System.in);
+        BufferedReader br = new BufferedReader(isr);
+        String s = br.readLine();
+        return s;
     }
 }

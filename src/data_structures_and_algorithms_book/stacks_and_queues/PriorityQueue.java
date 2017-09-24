@@ -47,10 +47,4 @@ public class PriorityQueue {
         return (items == maxSize);
     }
 
-
-
-
-
-
-
 }
