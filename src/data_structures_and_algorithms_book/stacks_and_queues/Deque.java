@@ -1,10 +1,10 @@
 package data_structures_and_algorithms_book.stacks_and_queues;
 
-public class Deque {
+public class Deque { // TODO: Refactoring
 
     private long [] dequeArray;
     private int front;
-    private int rear;
+    private int rear; // top
     private int items;
     private int maxSize;
 
@@ -17,28 +17,40 @@ public class Deque {
         items = 0;
     }
 
-    public void insertLeft() { // like Stack(LIFO)
+    public void insertLeft(long elem) {
 
     }
 
-    public void insertRight() { // like Queue(FIFO)
+    public void insertRight(long elem) { // like Queue
+        if (rear == maxSize -1)
+            rear = -1;
 
+        if (!isFull())
+            dequeArray[++rear] = elem;
+
+        items++;
     }
 
-    public void removeLeft() { // like Stack(LIFO)
+    public void removeLeft() { // like Queue
 
+        long temp = dequeArray[front++];
+
+        if (front == maxSize)
+            front = 0;
+        items--;
     }
 
-    public void removeRight() { // like Queue(FIFO)
+    public void removeRight() {
 
     }
 
     public boolean isEmpty() {
 
+
     }
 
     public boolean isFull() {
-        return items == maxSize ? true : false;
+        return items == maxSize - 1 ? true : false;
     }
 }
 

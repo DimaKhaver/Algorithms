@@ -15,7 +15,8 @@ public class StackX {
     }
 
     public void push(char j) {
-        stackArray[++top] = j;
+        if (!isFull())
+            stackArray[++top] = j;
     }
 
     public char pop() {
@@ -31,7 +32,7 @@ public class StackX {
     }
 
     public boolean isFull() {
-        return (top == maxSize - 1);
+        return (top == maxSize - 1) ? true : false;
     }
 
     public int size() {
@@ -49,5 +50,4 @@ public class StackX {
             System.out.println(peekN(j) + " ");
         }
     }
-
 }

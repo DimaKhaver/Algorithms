@@ -20,11 +20,13 @@ public class Queue {
         if (rear == maxSize -1)
             rear = -1;
         queArray[++rear] = j;
+
         items++;
     }
 
     public long remove() {
         long temp = queArray[front++];
+
         if (front == maxSize)
             front = 0;
         items--;
