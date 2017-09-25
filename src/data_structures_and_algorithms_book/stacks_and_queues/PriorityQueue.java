@@ -1,8 +1,6 @@
 package data_structures_and_algorithms_book.stacks_and_queues;
 
-public class PriorityQueue {
-
-    // Simple array-based priority queue
+public class PriorityQueue { // Simple array-based priority queue
 
     private int maxSize;
     private long [] queArray;
@@ -19,13 +17,14 @@ public class PriorityQueue {
 
         if (items == 0)
             queArray[items++] = item;
-        else
+        else {
             for (j = items - 1; j >= 0; j--) {
                 if (item > queArray[j])
-                    queArray[j+1] = queArray[j];
+                    queArray[j + 1] = queArray[j];
                 else
                     break;
             }
+        }
 
         queArray[j+1] = item;
         items++;

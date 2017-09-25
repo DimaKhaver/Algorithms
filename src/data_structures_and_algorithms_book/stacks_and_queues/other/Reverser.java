@@ -1,4 +1,6 @@
-package data_structures_and_algorithms_book.stacks_and_queues;
+package data_structures_and_algorithms_book.stacks_and_queues.other;
+
+import data_structures_and_algorithms_book.stacks_and_queues.StackX;
 
 public class Reverser {
 
