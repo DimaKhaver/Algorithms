@@ -1,4 +1,4 @@
-package data_structures_and_algorithms_book.simple_sorting;
+package data_structures_and_algorithms_in_java.simple_sorting;
 
 public class ArrayInOb {
 
@@ -21,14 +21,11 @@ public class ArrayInOb {
     }
 
     public void insertionSort() {
-
         int in, out;
 
         for (out = 1; out < elems; out++) { // out is dividing line
-
             Person temp = a[out]; // remove marked person
             in = out; // start shifting at out
-
             // until smaller one found
             while (in > 0 && a[in -1].getLast().compareTo(temp.getLast()) > 0) {
                 a[in] = a[in - 1]; // shift item to the right

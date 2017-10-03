@@ -1,4 +1,4 @@
-package data_structures_and_algorithms_book.stacks_and_queues;
+package data_structures_and_algorithms_in_java.stacks_and_queues;
 
 public class Deque { // TODO: Refactoring
 

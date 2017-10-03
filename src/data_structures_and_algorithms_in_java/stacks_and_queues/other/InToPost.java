@@ -1,6 +1,6 @@
-package data_structures_and_algorithms_book.stacks_and_queues.other;
+package data_structures_and_algorithms_in_java.stacks_and_queues.other;
 
-import data_structures_and_algorithms_book.stacks_and_queues.StackX;
+import data_structures_and_algorithms_in_java.stacks_and_queues.StackX;
 
 // infix to postfix conversion
 public class InToPost {

@@ -1,4 +1,4 @@
-package data_structures_and_algorithms_book.arrays;
+package data_structures_and_algorithms_in_java.arrays;
 
 /**
  * Created by dmitriy on 30.05.17.

@@ -1,4 +1,4 @@
-package data_structures_and_algorithms_book.linked_lists;
+package data_structures_and_algorithms_in_java.linked_lists;
 
 class Link {
 

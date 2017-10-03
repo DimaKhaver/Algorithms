@@ -1,4 +1,4 @@
-package data_structures_and_algorithms_book.simple_sorting;
+package data_structures_and_algorithms_in_java.simple_sorting;
 
 /**
  * Created by dmitriy on 23.06.17.

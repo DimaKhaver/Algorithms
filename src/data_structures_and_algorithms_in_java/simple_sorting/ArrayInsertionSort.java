@@ -1,4 +1,4 @@
-package data_structures_and_algorithms_book.simple_sorting;
+package data_structures_and_algorithms_in_java.simple_sorting;
 
 /**
  * Created by dmitriy on 08.07.17.
@@ -28,7 +28,6 @@ public class ArrayInsertionSort {
 
     public void noDups() { // Deleting all duplicates
         // (no item is moved more than once - no matter how many duplicates there are)
-
         for (int i = 0; i < elems; ++i) {
             if (!isRepeated(i)) {
                 if (lastUnrepeatedIndex < elems - 1) {
@@ -62,7 +61,6 @@ public class ArrayInsertionSort {
         int in, out;
 
         for (out = 1; out < elems; out++) {
-
             long temp = a[out];
             in = out;
 
@@ -70,7 +68,6 @@ public class ArrayInsertionSort {
                 a[in] = a[in - 1];
                 --in;
             }
-
             a[in] = temp;
         }
     }

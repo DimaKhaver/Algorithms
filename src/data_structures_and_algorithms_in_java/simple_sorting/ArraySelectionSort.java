@@ -1,4 +1,4 @@
-package data_structures_and_algorithms_book.simple_sorting;
+package data_structures_and_algorithms_in_java.simple_sorting;
 
 /**
  * Created by dmitriy on 08.07.17.
@@ -27,21 +27,15 @@ public class ArraySelectionSort {
 
     // Lower values accumulate on the left
     public void selectionSort() { // Number of swaps O(N); Number of comparisons O(N^2)
-
         int out, in, min;
 
         for (out = 0; out < elems - 1; out++) {
             min = out;
 
             for (in = out + 1; in < elems; in++) {
-                if (a[in] < a[min]) {
+                if (a[in] < a[min])
                     min = in;
-                    System.out.println("inner loop: min = " + min);
-                }
             }
-
-            System.out.println("out = " + out + "; min = " + min);
-
             swap(out, min);
         }
     }

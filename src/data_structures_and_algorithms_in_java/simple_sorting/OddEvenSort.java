@@ -1,4 +1,4 @@
-package data_structures_and_algorithms_book.simple_sorting;
+package data_structures_and_algorithms_in_java.simple_sorting;
 
 public class OddEvenSort {
 
@@ -22,7 +22,6 @@ public class OddEvenSort {
     }
 
     public void oddEvenSort(){
-
         boolean isSorted = false;
 
         while (!isSorted) {

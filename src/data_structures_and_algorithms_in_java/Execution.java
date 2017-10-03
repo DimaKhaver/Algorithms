@@ -1,5 +1,5 @@
 
-package data_structures_and_algorithms_book;
+package data_structures_and_algorithms_in_java;
 
 /**
  * Created by dmitriy on 30.05.17.
