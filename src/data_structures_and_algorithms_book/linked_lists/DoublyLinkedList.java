@@ -12,8 +12,8 @@ class DLLink {
 
 
 public class DoublyLinkedList {
-    private DLLink first;
-    private DLLink last;
+    private DLLink first; // ref to first item
+    private DLLink last; // ref to last item
 
     public DoublyLinkedList() {
         first = null;
@@ -24,99 +24,110 @@ public class DoublyLinkedList {
         return first == null;
     }
 
-    public void insertFirst(long dd) {
+    public void insertFirst(long dd) { // insert at front of list
         DLLink newLink = new DLLink(dd);
 
         if (isEmpty())
-            last = newLink;
+            last = newLink; // newLink <- last
         else
-            first.previous = newLink;
+            first.previous = newLink; // newLink <- old first
 
-        newLink.next = first;
-        first = newLink;
+        newLink.next = first; // newLink -> old first
+        first = newLink; // first -> newLink
     }
 
-    public void insertLast(long dd) {
+    public void insertLast(long dd) { // insert at end of list
         DLLink newLink = new DLLink(dd);
 
-        if (isEmpty())
-            first = newLink;
+        if (isEmpty()) // if empty link
+            first = newLink; // first -> newLink
         else {
-            last.next = newLink;
-            newLink.previous = last;
+            last.next = newLink; // old last -> newLink
+            newLink.previous = last; // old last <- newLink
         }
-        last = newLink;
+        last = newLink; // newLink <- last
     }
 
-    public DLLink deleteFirst() {
-        DLLink temp = first;
+    public DLLink deleteFirst() { // delete first link
+        if (!isEmpty()) {
+            DLLink temp = first;
 
-        if (first.next == null)
-            last = null;
-        else
-            first.next.previous = null;
+            if (first.next == null) // if only 1 item
+                last = null; // null <- last
+            else
+                first.next.previous = null; // null <- old next
 
-        first = first.next;
-        return temp;
+            first = first.next; // first -> old next
+            return temp;
+        } else
+            return null;
     }
 
-    public DLLink deleteLast() {
-        DLLink temp = last;
+    public DLLink deleteLast() { // delete last link
+        if (!isEmpty()) {
+            DLLink temp = last;
 
-        if (first.next == null)
-            first = null;
-        else
-            last.previous.next = null;
+            if (first.next == null) // if only 1 item
+                first = null; // first -> null
+            else
+                last.previous.next = null; // old prev -> null
 
-        last = last.previous;
-        return temp;
+            last = last.previous; // old prev <- last
+            return temp;
+        } else
+            return null;
     }
 
-    public boolean insertAfter(long key, long dd) {
-        DLLink current = first;
+    public boolean insertAfter(long key, long dd) { // insert dd after certain key
+        if (!isEmpty()) {
+            DLLink current = first; // start at beginning
 
-        while (current.dData != key) {
-            current = current.next;
-            if (current == null)
-                return false;
-        }
+            while (current.dData != key) { // until match is found
+                current = current.next; // move to next link
+                if (current == null)
+                    return false; // didn't find it
+            }
 
-        DLLink newLink = new DLLink(dd);
+            DLLink newLink = new DLLink(dd); // make new link
 
-        if (current == last) {
-            newLink.next = null;
-            last = newLink;
-        }
-        else {
-            newLink.next = current.next;
-            current.next.previous = newLink;
-        }
+            if (current == last) { // if it last link
+                newLink.next = null; // newLink -> null
+                last = newLink; // newLink <- last
+            } else { // not last link
+                newLink.next = current.next; // newLink -> old next
+                current.next.previous = newLink; // newLink <- old next
+            }
 
-        newLink.previous = current;
-        current.next = newLink;
-        return true;
+            newLink.previous = current; // old current <- newLink
+            current.next = newLink; // old current -> newLink
+            return true; // found it, did insertion
+        } else
+            return false;
     }
 
     public DLLink deleteKey(long key) {
-        DLLink current = first;
+        if (!isEmpty()) {
+            DLLink current = first; // start at beginning
 
-        while (current.dData != key) {
-            current = current.next;
-            if(current == null)
-                return null;
-        }
+            while (current.dData != key) { // until match is found
+                current = current.next; // move to next link
+                if (current == null)
+                    return null; // didn't find it
+            }
 
-        if (current == first)
-            first = current.next;
-        else
-            current.previous.next = current.next;
+            if (current == first) // found it; first item ?
+                first = current.next; // first -> old next
+            else // not first
+                current.previous.next = current.next; // old prev -> old next
 
-        if (current == last)
-            last = current.previous;
-        else
-            current.next.previous = current.previous;
+            if (current == last) // last item ?
+                last = current.previous; // old prev <- last
+            else // not last
+                current.next.previous = current.previous; // old prev <- old next
 
-        return current;
+            return current;
+        } else
+            return null;
     }
 
 }
