@@ -21,7 +21,7 @@ class SLinkList {
         return (first == null);
     }
 
-    public void insertFirst(long dd) {
+    public void insertLast(long dd) {
         SLink newLink = new SLink(dd);
         newLink.next = first;
         first = newLink;
@@ -43,7 +43,7 @@ public class LinkStack {
     }
 
     public void push(long j) {
-        theList.insertFirst(j);
+        theList.insertLast(j);
     }
 
     public long pop() {

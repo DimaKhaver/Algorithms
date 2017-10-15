@@ -6,7 +6,6 @@ class Link {
     public double dData; // data item
     public Link next;  // next link in list
 
-
     public Link(int id, double dd) {
         iData = id;
         dData = dd;
@@ -26,7 +25,7 @@ public class LinkList {
     }
 
     public boolean isEmpty() {
-        return first == null ? true : false;
+        return first == null;
     }
 
     public void insertFirst(int id, double dd) { // insert at start of list

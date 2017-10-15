@@ -19,8 +19,10 @@ public class PriorityQueue { // Simple array-based priority queue
             queArray[items++] = item;
         else {
             for (j = items - 1; j >= 0; j--) {
-                if (item > queArray[j])
-                    queArray[j + 1] = queArray[j];
+                if (item > queArray[j]) {
+                    if (!isFull())
+                        queArray[j + 1] = queArray[j];
+                }
                 else
                     break;
             }

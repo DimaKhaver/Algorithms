@@ -1,7 +1,6 @@
 package data_structures_and_algorithms_in_java.stacks_and_queues;
 
-public class Deque { // TODO: Refactoring
-
+public class Deque {
     private long [] dequeArray;
     private int front;
     private int rear; // top of the Deque
@@ -11,7 +10,6 @@ public class Deque { // TODO: Refactoring
     public Deque(int elem) {
         maxSize = elem;
         dequeArray = new long[maxSize];
-
         rear = -1;
         front = 0;
         items = 0;
@@ -22,12 +20,11 @@ public class Deque { // TODO: Refactoring
             for (int i = rear + 1; i > 0; --i) {
                 dequeArray[i] = dequeArray[i-1];
             }
-
             dequeArray[front] = elem;
         }
     }
 
-    public void insertRight(long elem) { // like Queue
+    public void insertRight(long elem) {
         if (rear == maxSize -1)
             rear = -1;
         else {
@@ -38,9 +35,8 @@ public class Deque { // TODO: Refactoring
         }
     }
 
-    public void removeLeft() { // like Queue
+    public void removeLeft() {
         long temp = dequeArray[front++];
-
         if (front == maxSize)
             front = 0;
         items--;
@@ -51,11 +47,11 @@ public class Deque { // TODO: Refactoring
     }
 
     public boolean isEmpty() {
-        return items == 0 ? true : false;
+        return items == 0;
     }
 
     public boolean isFull() {
-        return items == maxSize - 1 ? true : false;
+        return items == maxSize - 1;
     }
 }
 

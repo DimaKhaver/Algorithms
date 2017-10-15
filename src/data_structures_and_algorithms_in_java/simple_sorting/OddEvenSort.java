@@ -25,15 +25,12 @@ public class OddEvenSort {
         boolean isSorted = false;
 
         while (!isSorted) {
-
             isSorted = true;
-
             for (int i = 0; i <= elems - 2; i += 2) { // odd indexed elements
                 if (a[i] > a[i+1])
                     swap(a[i], a[i+1]);
                 isSorted = false;
             }
-
             for (int i = 1; i <= elems - 2; i += 2) { // even indexed elements
                 if (a[i] > a[i+1])
                     swap(a[i], a[i+1]);
