@@ -59,21 +59,25 @@ class DDoublyLinkedList {
     }
 
     public void deleteFirstLink() {
-      //DDLink link = first;
-        if (size == 1)
-            first = last = null;
-        else {
-            first = first.next;
-            first.next.prev = null;
+        if (!isEmpty()) {
+            //DDLink link = first;
+            if (size == 1)
+                first = last = null;
+            else {
+                first = first.next;
+                first.next.prev = null;
+            }
         }
     }
 
     public void deleteLastLink( ) {
-        if (size == 1)
-            first = last = null;
-        else {
-            last.prev.next = null;
-            last = last.prev;
+        if (!isEmpty()) {
+            if (size == 1)
+                first = last = null;
+            else {
+                last.prev.next = null;
+                last = last.prev;
+            }
         }
     }
 
@@ -124,6 +128,4 @@ public class LinkDeque {
     public int size() {
         return doublyLinkedList.getSize();
     }
-
 }
-
