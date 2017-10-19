@@ -16,7 +16,7 @@ class CLink {
 }
 
 public class CircularLinkedList {
-    private CLink currentLink; // should be the only access to the list ?
+    private CLink currentLink; // the only access to the list from 2nd element ?
     private CLink first;
     private CLink last;
     private int size = 0;
@@ -34,7 +34,6 @@ public class CircularLinkedList {
             if (isEmpty()) {
                 this.first = this.last = link;
                 link.next = link.prev = null;
-              //this.currentLink
             } else {
                 if (size == 1) {
                     this.last = link;
@@ -42,8 +41,10 @@ public class CircularLinkedList {
                     link.next = this.first;
                     this.first.prev = link;
                     this.first.next = link;
-                  //this.currentLink = this.last;
-                } else {
+                }
+                else {
+                  //if (size == 2)
+                  //    step();
                     link.prev = this.last;
                     this.last.next = link;
                     this.last = link;
@@ -51,48 +52,70 @@ public class CircularLinkedList {
                     this.first.prev = link;
                 }
             }
+            System.out.println("inserted: " + link.getData());
             size++;
         }
     }
 
-    public boolean delete(int data) {
-        CLink link = search(data);
+    public void delete(int data) {
+        if (!isEmpty()) {
+            CLink link = search(data);
 
-        if (link != null) {
-            if (size == 1) {
-                link.prev = link.next = null;
-                this.first = this.last = null;
-            }
-            else {
-                if (link == this.first) {
-                    this.first = link.next;
-                    link.next.prev = last;
-                    last.next = link.next;
+            if (link != null) {
+                if (size == 1) {
                     link.prev = link.next = null;
-                } else if (link == this.last) {
-                    this.last = link.prev;
-                    this.last.next = this.first;
-                    this.first.prev = this.last;
-                    link.prev = link.next = null;
+                    this.first = this.last = this.currentLink = null;
                 } else {
-                    link.prev.next = link.next;
-                    link.next.prev = link.prev;
-                    link.next = link.prev = null;
+                    if (link == this.first) {
+                        this.first = link.next;
+                        link.next.prev = last;
+                        last.next = link.next;
+                        link.prev = link.next = null;
+                    } else if (link == this.last) {
+                        this.last = link.prev;
+                        this.last.next = this.first;
+                        this.first.prev = this.last;
+                        link.prev = link.next = null;
+                    } else {
+                        if (link == this.currentLink)
+                            step();
+
+                        link.prev.next = link.next;
+                        link.next.prev = link.prev;
+                        link.next = link.prev = null;
+                    }
                 }
+                size--;
             }
-            return true;
-        } else
-            return false;
+        }
+    }
+
+    private void step() {
+        if (this.currentLink != this.last)
+            this.currentLink = this.currentLink.next;
+        else
+            System.out.println("Only 1 element in list");
     }
 
     private CLink search(int data) {
         CLink link = this.first;
-        if (link.getData() != data) {
-            while (link.getData() != data || link != this.last) {
-                link = link.next;
-            }
+        while (link.getData() != data) {
+            link = link.next;
+            if (link == last && link.getData() != data)
+                break;
         }
         return link.getData() == data ? link : null;
+    }
+
+    public void show() {
+        if (!isEmpty()) {
+            System.out.println("\n");
+            CLink link = this.first;
+            do {
+                System.out.println("Show link=" + link.getData());
+                link = link.next;
+            } while (link != last.next);
+        }
     }
 
     public boolean isEmpty() {
@@ -102,5 +125,4 @@ public class CircularLinkedList {
     public boolean isFull() {
         return size == maxSize;
     }
-
 }
