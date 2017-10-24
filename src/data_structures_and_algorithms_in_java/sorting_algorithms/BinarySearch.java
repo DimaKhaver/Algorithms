@@ -1,4 +1,4 @@
-package data_structures_and_algorithms_in_java.simple_sorting;
+package data_structures_and_algorithms_in_java.sorting_algorithms;
 
 class BinarySearch {
 
