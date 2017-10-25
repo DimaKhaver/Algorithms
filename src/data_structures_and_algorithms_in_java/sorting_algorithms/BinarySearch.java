@@ -8,7 +8,7 @@ class BinarySearch {
     private BinarySearch() {
     }
 
-    private boolean binarySearch(int key) {
+    private boolean binarySearch(int key) { // O(log N)
         int low = 0;
         int high = size - 1;
 
@@ -25,6 +25,22 @@ class BinarySearch {
                 high = middle - 1;
         }
         return false;
+    }
+
+    private int recursiveBinarySearch(int searchKey, int lowerBound, int upperBound) {
+        int curIndex;
+
+        curIndex = (lowerBound + upperBound) / 2;
+        if (data[curIndex] == searchKey)
+            return curIndex;
+        else if (lowerBound > upperBound)
+            return size;
+        else {
+            if (data[curIndex] < searchKey)
+                return recursiveBinarySearch(searchKey, curIndex + 1, upperBound);
+            else
+                return recursiveBinarySearch(searchKey, lowerBound, curIndex - 1);
+        }
     }
 
 }
