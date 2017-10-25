@@ -1,5 +1,30 @@
 package data_structures_and_algorithms_in_java.sorting_algorithms;
 
+class Person {
+
+    private String lastName;
+    private String firstName;
+    private int age;
+
+    public Person(String last, String first, int age) {
+        this.lastName = last;
+        this.firstName = first;
+        this.age = age;
+    }
+
+
+    public void displayPerson() {
+        System.out.println(
+                "lastName = " + lastName + "; " +
+                        "firstName = " + firstName + "; " +
+                        "age = " + age);
+    }
+
+    public String getLast() {
+        return lastName;
+    }
+}
+
 public class ArrayInOb {
 
     private Person[] a;
@@ -20,7 +45,7 @@ public class ArrayInOb {
             a[i].displayPerson();
     }
 
-    public void insertionSort() {
+    public void insertionSort() { // O(N^2)
         int in, out;
 
         for (out = 1; out < elems; out++) { // out is dividing line
