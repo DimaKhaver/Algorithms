@@ -1,6 +1,6 @@
 package data_structures_and_algorithms_in_java.sorting_algorithms;
 
-public class OddEvenSort {
+public class OddEvenSort { // O(N^2)
 
     private long[] a;
     private int elems;

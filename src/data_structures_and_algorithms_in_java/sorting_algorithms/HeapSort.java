@@ -1,6 +1,6 @@
 package data_structures_and_algorithms_in_java.sorting_algorithms;
 
-public class HeapSort {
+public class HeapSort { // O(n*log n)
 
     public void sort(int arr[])
     {

@@ -1,6 +1,6 @@
 package data_structures_and_algorithms_in_java.sorting_algorithms;
 
-public class BaseQuickSort {
+public class BaseQuickSort { // O(n*log n)
     private int[] numbers;
     private int number;
 
