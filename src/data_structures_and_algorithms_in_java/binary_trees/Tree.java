@@ -2,6 +2,7 @@ package data_structures_and_algorithms_in_java.binary_trees;
 
 import java.util.Stack;
 
+// Binary trees O(log N)
 class Node {
     public int iData; // data item (key)
     public double dData; // data item

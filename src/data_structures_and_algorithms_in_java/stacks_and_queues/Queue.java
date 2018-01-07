@@ -1,7 +1,6 @@
 package data_structures_and_algorithms_in_java.stacks_and_queues;
 
-public class Queue {
-
+public class Queue { // O(1)
     private int maxSize;
     private long[] queArray;
     private int front;

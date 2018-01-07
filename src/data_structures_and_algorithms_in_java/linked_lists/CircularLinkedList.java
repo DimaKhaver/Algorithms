@@ -1,5 +1,11 @@
 package data_structures_and_algorithms_in_java.linked_lists;
 
+
+/*
+ LinkedLists - insertions/deletions: O(N)
+ min value can be found/deleted: O(1)
+*/
+
 // TODO: testing and setting currentLink
 class CLink {
     public CLink next;

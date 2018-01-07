@@ -2,6 +2,11 @@ package data_structures_and_algorithms_in_java.sorting_algorithms;
 
 import java.util.Arrays;
 
+/*
+    O(d * (n+b))
+    b - base for representing numbers
+ */
+
 public class RadixSort {
 
     // A utility function to get maximum value in arr[]

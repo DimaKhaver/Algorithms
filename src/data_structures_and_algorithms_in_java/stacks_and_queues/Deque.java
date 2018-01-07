@@ -1,6 +1,6 @@
 package data_structures_and_algorithms_in_java.stacks_and_queues;
 
-public class Deque {
+public class Deque { // O(1)
     private long [] dequeArray;
     private int front;
     private int rear; // top of the Deque

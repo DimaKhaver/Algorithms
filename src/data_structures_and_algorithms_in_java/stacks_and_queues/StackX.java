@@ -2,7 +2,7 @@ package data_structures_and_algorithms_in_java.stacks_and_queues;
 
 
 // Stack used to reverse a string
-public class StackX {
+public class StackX { // O(1)
 
     private int maxSize;
     private char[] stackArray;

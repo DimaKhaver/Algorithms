@@ -1,6 +1,6 @@
 package data_structures_and_algorithms_in_java.stacks_and_queues;
 
-public class PriorityQueue { // Simple array-based priority queue
+public class PriorityQueue { // Simple array-based priority queue: O(1)
 
     private int maxSize;
     private long [] queArray;

@@ -4,6 +4,10 @@ package data_structures_and_algorithms_in_java.linked_lists;
  it's called doubly - because each node has 2 pointers:
  to PREV node and to NEXT node in the linked list
 */
+/*
+ LinkedLists - insertions/deletions: O(N)
+ min value can be found/deleted: O(1)
+*/
 
 class DLLink {
     public long dData; // data item
