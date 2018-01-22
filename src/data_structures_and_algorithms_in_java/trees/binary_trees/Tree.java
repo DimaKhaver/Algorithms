@@ -1,4 +1,4 @@
-package data_structures_and_algorithms_in_java.binary_trees;
+package data_structures_and_algorithms_in_java.trees.binary_trees;
 
 import java.util.Stack;
 
