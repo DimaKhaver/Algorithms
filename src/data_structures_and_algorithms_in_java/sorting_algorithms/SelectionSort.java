@@ -3,13 +3,13 @@ package data_structures_and_algorithms_in_java.sorting_algorithms;
 /**
  * Created by dmitriy on 08.07.17.
  */
-public class ArraySelectionSort {
+public class SelectionSort {
 
     private long [] a;
     private int elems;
 
 
-    public ArraySelectionSort(int max) {
+    public SelectionSort(int max) {
         a = new long[max];
         elems = 0;
     }

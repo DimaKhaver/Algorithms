@@ -3,14 +3,14 @@ package data_structures_and_algorithms_in_java.sorting_algorithms;
 /**
  * Created by dmitriy on 08.07.17.
  */
-public class ArrayInsertionSort {
+public class InsertionSort {
 
     private long[] a;
     private int elems;
     private int lastUnrepeatedIndex = 0;
     private int repeatedDigitsCount = 0;
 
-    public ArrayInsertionSort(int max) {
+    public InsertionSort(int max) {
         a = new long[max];
         elems = 0;
     }

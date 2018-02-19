@@ -3,12 +3,12 @@ package data_structures_and_algorithms_in_java.sorting_algorithms;
 /**
  * Created by dmitriy on 23.06.17.
  */
-public class ArrayBubbleSort {
+public class BubbleSort {
 
     private long[] a;
     private int elems;
 
-    public ArrayBubbleSort(int max) {
+    public BubbleSort(int max) {
         a = new long[max];
         elems = 0;
     }
