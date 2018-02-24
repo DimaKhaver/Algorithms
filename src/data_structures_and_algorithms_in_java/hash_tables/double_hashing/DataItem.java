@@ -20,17 +20,16 @@ public class DataItem {
 class HashTable {
     private DataItem[] hashArray; // array is the hash table
     private int arraySize;
-    private DataItem nonItem; // for deleted items
+    private DataItem nonItem = new DataItem(-1);
 
     public HashTable(int size) {
         arraySize = size;
         hashArray = new DataItem[arraySize];
-        nonItem = new DataItem(-1);
     }
 
     public void displayTable() {
         System.out.print("Table: ");
-        for (int j=0; j < arraySize; j++) {
+        for (int j = 0; j < arraySize; j++) {
             if (hashArray[j] != null)
                 System.out.print(String.valueOf(hashArray[j].getKey()));
             else
