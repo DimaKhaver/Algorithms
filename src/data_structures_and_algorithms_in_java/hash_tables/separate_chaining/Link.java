@@ -13,7 +13,6 @@ public class Link {
     public int getKey() {
         return data;
     }
-
     public void displayLink() {
         System.out.print(data + " ");
     }
@@ -40,6 +39,7 @@ class SortedList {
             first = theLink; // first -> new link
         else
             prev.next = theLink; // prev -> new link
+
         theLink.next = current; // new link -> current
     }
 
@@ -71,9 +71,9 @@ class SortedList {
 
     public void displayList() {
         System.out.print("List (first-->last): ");
+
         Link current = first; // start at beginning of list
-        while(current != null) // until end of list,
-        {
+        while(current != null) { // until end of list
             current.displayLink(); // print data
             current = current.next; // move to next link
         }
@@ -121,34 +121,3 @@ class HashTable {
         return theLink;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
