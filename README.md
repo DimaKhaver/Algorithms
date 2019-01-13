@@ -1,2 +1,2 @@
 # Algorithms
-Solving different algorithms here
+Solving different algorithms here, book: "Algorithms & data structures in Java"
